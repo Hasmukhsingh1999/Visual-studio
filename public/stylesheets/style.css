@@ -1,0 +1,197 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  font-family: "Neue Montreal";
+}
+
+* {
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+
+.left {
+  padding: 2vw;
+  width: 20%;
+  height: 100%;
+  border-right: 1px solid #bbbbbb;
+}
+
+a {
+  color: #00b7ff;
+}
+
+.files {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main>.left>h3 {
+  color: #037dff;
+  font-size: 1.5vw;
+  font-weight: 900;
+}
+
+.main>.left>img {
+  height: 2vw;
+}
+
+h5 {
+  font-size: 1.2vw;
+}
+
+.folders {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+}
+.raw{
+  display: flex;
+  gap: 1vw;
+}
+.section {
+  display: flex;
+
+  align-items: center;
+  gap: 2vw;
+  margin-top: 1.4vw;
+}
+
+.files-system {
+  margin: 2vw 0;
+  
+}
+
+.files{
+  justify-content: space-between;
+}
+.files>.raw>a {
+  text-decoration: none;
+  color: black;
+}
+
+.section>.icons>i {
+  margin: 0.4vw;
+}
+
+.icons>a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+}
+
+.forms>form {
+  margin: 0.6vw 0vw;
+}
+
+form {
+  display: none;
+}
+
+form>input {
+  padding: 0.3vw;
+}
+
+.right {
+  width: 80%;
+  height: 100%;
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  left: 30%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.right-section-oly>h3,
+.right-section-oly>h4 {
+  font-size: 3vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vw;
+}
+
+.right-section-startup {
+  margin-top: 2vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vw;
+}
+
+.startup-section-icons-di {
+  display: flex;
+  gap: 1vw;
+}
+
+.center>h1 {
+  opacity: 0.4;
+}
+
+.right>.right-nav {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #bbbbbb;
+}
+.icons-l{
+  opacity: 0;
+}
+.files:hover .icons-l{
+  opacity: 1;
+}
+.folders:hover .icons-l{
+  opacity: 1;
+}
+.tabs {
+  position: absolute;
+  /* position: relative; */
+  display: inherit;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-right: 1px solid #bbbbbb;
+}
+
+.tabs>h3 {
+  font-size: 15px;
+}
+
+/* .tabs:hover::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  top: 0;
+  background-color: #00b7ff;
+} */
+
+textarea{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-family: "Consolas";
+  font-size: 1.5vw;
+  padding: 30px 30px 0px 30px;
+}
+

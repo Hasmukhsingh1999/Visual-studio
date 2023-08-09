@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Express</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="left">
+        <img
+          src="https://mobilemancerblog.blob.core.windows.net/blog/2020/08/vs-code-logo-transp.png"
+          alt="images"
+        />
+
+        <div class="section">
+          <h5>Folder Names</h5>
+          <div class="icons">
+            <i id="fileicon" class="ri-file-3-line"></i>
+            <i id="foldericon" class="ri-folders-fill"></i>
+            <a href="/"><i id="refreshicon" class="ri-refresh-line"></i></a>
+          </div>
+        </div>
+        <div class="forms">
+          <form action="/createForm" id="filename">
+            <input
+              type="filename"
+              name="filename"
+              placeholder="filename"
+              id="file-name"
+            />
+          </form>
+          <form action="/createFolder" id="foldername">
+            <input
+              type="foldername"
+              name="foldername"
+              placeholder="foldername"
+              id="folder-name"
+            />
+          </form>
+        </div>
+
+      </div>
+      <div class="right">
+        <div class="right-nav">
+          <div class="tabs">
+            <h3><%= filesname %> <i class="ri-close-line"></i></h3>
+          </div>
+        </div>
+
+        <textarea><%= newdata %></textarea>
+      </div>
+    </div>
+    
+  </body>
+</html>
+

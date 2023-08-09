@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Express</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="left">
+        <img
+          src="https://mobilemancerblog.blob.core.windows.net/blog/2020/08/vs-code-logo-transp.png"
+          alt="images"
+        />
+
+        <div class="section">
+          <h5>Folder Names</h5>
+          <div class="icons">
+            <i id="fileicon" class="ri-file-3-line"></i>
+            <i id="foldericon" class="ri-folders-fill"></i>
+            <a href="/"><i id="refreshicon" class="ri-refresh-line"></i></a>
+          </div>
+        </div>
+        <div class="forms">
+          <form action="/createForm" id="filename">
+            <input
+              type="filename"
+              name="filename"
+              placeholder="filename"
+              id="file-name"
+            />
+          </form>
+          <form action="/createFolder" id="foldername">
+            <input
+              type="foldername"
+              name="foldername"
+              placeholder="foldername"
+              id="folder-name"
+            />
+          </form>
+        </div>
+        <div class="files-system">
+          <% data.forEach(function(e){ %> 
+            <% if(e.isFolder===true){ %>
+
+          <div class="folders">
+            <div class="raw">
+              <i class="ri-folders-fill"></i>
+              <p><%= e.name %></p>
+            </div>
+            <div class="icons-l">
+               <i class="ri-edit-line"></i>
+              <a href="/deleteFolder/<%= e.name%>"
+                ><i class="ri-delete-bin-line"></i
+              ></a>
+            </div>
+          </div>
+
+          <%} else{ %>
+          <div class="files">
+            <div class="raw">
+              <i class="ri-file-3-line"></i>
+              <a href="/file/<%= e.name %>">
+                <p><%= e.name %></p>
+              </a>
+            </div>
+            <div class="icons-l">
+            <i class="ri-edit-line"></i>
+              <a href="/deleteFiles/<%= e.name%>"
+                ><i class="ri-delete-bin-line"></i
+              ></a>
+            </div>
+          </div>
+          <%} %> <%}) %>
+        </div>
+      </div>
+      <div class="right">
+        <div class="right-nav">
+          <div class="tabs">
+            <h3>index.html <i class="ri-close-line"></i></h3>
+          </div>
+        </div>
+        <div class="center">
+          <div class="right-section-oly">
+            <h3>Visual Studio Code</h3>
+            <h4>Editing evolved</h4>
+            <div class="right-section-startup">
+              <h3>Start</h3>
+              <div class="startup-section-icons-di">
+                <i class="ri-file-3-line"></i>
+                <p>New File...</p>
+              </div>
+              <div class="startup-section-icons-di">
+                <i class="ri-folders-line"></i>
+                <p>New Folder...</p>
+              </div>
+              <div class="startup-section-icons-di">
+                <i class="ri-folder-open-line"></i>
+                <p>Open Folder...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function onOff() {
+        document.querySelectorAll("form").forEach(function (elem) {
+          elem.style.display = "none";
+        });
+      }
+      document
+        .querySelector("#fileicon")
+        .addEventListener("click", function (e) {
+          onOff();
+          document.querySelector("#filename").style.display = "initial";
+        });
+      document
+        .querySelector("#foldericon")
+        .addEventListener("click", function (e) {
+          onOff();
+          document.querySelector("#foldername").style.display = "initial";
+        });
+      window.addEventListener("keydown", function (event) {
+        if (event.keyCode === 27) {
+          onOff();
+          document.querySelectorAll("input").forEach(function (e) {
+            e.value = "";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
